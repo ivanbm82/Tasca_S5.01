@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Sucursales</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        a {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        a + a {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Lista de Sucursales</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>País</th>
+        <th>Tipo</th>
+        <th>Acciones</th>
+    </tr>
+    <tr th:each="sucursal : ${sucursales}">
+        <td th:text="${sucursal.pk_SucursalID}"></td>
+        <td th:text="${sucursal.nomSucursal}"></td>
+        <td th:text="${sucursal.paisSucursal}"></td>
+        <td th:text="${sucursal.tipusSucursal}"></td>
+        <td>
+            <a th:href="@{/sucursal/update/{id}(id=${sucursal.pk_SucursalID})}">Editar</a>
+            <a th:href="@{/sucursal/delete/{id}(id=${sucursal.pk_SucursalID})}">Eliminar</a>
+            <a href="/sucursal">Inicio</a>
+        </td>
+    </tr>
+</table>
+
+
+
+<script src="scripts.js"></script>
+</body>
+</html>

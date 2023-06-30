@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles de la Sucursal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalles de la Sucursal</h1>
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>País</th>
+            <th>Tipo</th>
+        </tr>
+        <tr>
+            <td th:text="${sucursal.pk_SucursalID}"></td>
+            <td th:text="${sucursal.nomSucursal}"></td>
+            <td th:text="${sucursal.paisSucursal}"></td>
+            <td th:text="${sucursal.tipusSucursal}"></td>
+        </tr>
+    </table>
+</body>
+</html>
