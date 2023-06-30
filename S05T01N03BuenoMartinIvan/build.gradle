@@ -1,0 +1,32 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'cat.itacademy.barcelonactiva.Bueno.Martin.Ivan.s05.t01.n03'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework:spring-webflux:6.0.10'
+	implementation 'io.projectreactor:reactor-core:3.5.7'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mockito:mockito-junit-jupiter:5.4.0'
+	testImplementation 'org.mockito:mockito-core:5.4.0'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
